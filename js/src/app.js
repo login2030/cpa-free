@@ -44,7 +44,7 @@ window.addEventListener('load', e=> {
 	btnMobMenu.sideNav();
 	/* --- */
 	
-	/* Видео */
+	/* Обрабатываем клики */
 	$(window).click(e=> {
 		let $el = $(e.target);
 		// Видео на главной

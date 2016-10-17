@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="language" content="ru">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="viewport" content="width=device-width">
 	<script type="text/javascript">
 		var app = {};
 	</script>
 	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	<link rel="stylesheet" href="style/css/site.css">
-	<title>test</title>
+	
+	<title>CPA INSIDE | Бесплатный курс</title>
 </head>
 <body>
 	<nav class="teal darken-1">
@@ -28,42 +33,70 @@
 	<main id="js-content" class="c-content container"></main>
 	
 	<script id="t-index" type="text/x-handlebars-template">
-		<div class="l-page-index">
+		<section class="l-page-index">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>ИЩЕТЕ ЗАРАБОТОК В ИНТЕРНЕТЕ?</h1>
+				<h1>Ищете заработок в инттернете?</h1>
 				<h2>узнай за одну минуту с чего начать</h2>
 			</div>
 			<div class="c-video js-index-video"></div>
 			<button class="c-button-material waves-effect btn-large amber darken-4 btn"><i class="tiny material-icons right">thumb_up</i>Начать</button>
-		</div>
+		</section>
 	</script>
 	<script id="t-start" type="text/x-handlebars-template">
-		<div class="l-page-start">
+		<section class="l-page-start">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Старт</h1>
+				<h1>Начните обучение прямо сейчас</h1>
 			</div>
-		</div>	
+			<div class="row">
+				<form class="c-start-form col l6 offset-l3 m10 offset-m1 s12" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" target="_blank">
+					<div class="row">
+						<div class="input-field col l12 m12 s12">
+							<i class="material-icons prefix">account_circle</i>
+							<input id="first-name" type="text" class="validate" required="required">
+							<label for="first-name">Ваше имя</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col l12 m12 s12">
+							<i class="material-icons prefix">email</i>
+							<input id="email-field" type="email" class="validate" required="required">
+							<label for="email-field">Ваш Email</label>
+						</div>
+					</div>
+					<div class="row">
+						<button class="c-start-form__button btn waves-effect waves-light amber darken-4" type="submit" name="action">Начать
+						  <i class="material-icons right">send</i>
+						</button>
+					</div>
+					<div class="row">
+						<input type="hidden" name="campaign_token" value="pmvdd"><br>
+						<input type="hidden" name="thankyou_url" value="http://cpainside.com/start/thanks.html">
+						<input type="hidden" name="start_day" value="0">
+					</div>
+				</form>
+			</div>
+		</section>	
 	</script>
 	<script id="t-reviews" type="text/x-handlebars-template">
-		<div class="l-page-reviews">
+		<section class="l-page-reviews">
 			<div class="c-index-header blue-grey-text text-darken-3">
 				<h1>Отзывы</h1>
 			</div>
-		</div>
+		</section>
 	</script>
 	<script id="t-team" type="text/x-handlebars-template">
-		<div class="l-page-team">
+		<section class="l-page-team">
 			<div class="c-index-header blue-grey-text text-darken-3">
 				<h1>Команда</h1>
 			</div>
-		</div>
+		</section>
 	</script>
 	<script id="t-contacts" type="text/x-handlebars-template">
-		<div class="l-page-contacts">
+		<section class="l-page-contacts">
 			<div class="c-index-header blue-grey-text text-darken-3">
 				<h1>Контакты</h1>
 			</div>
-		</div>
+		</section>
 	</script>
 	
 	<footer class="l-footer page-footer teal darken-1">
