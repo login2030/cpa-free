@@ -1,11 +1,12 @@
 /* global page, Handlebars */
 window.addEventListener('load', e=> {
-	let content = $('#js-content');
+	let pageContent = $('#js-content');
 	
 	
 	/* Навигация */
 	page('/', index);
 	page('/start', start);
+	page('/content', content);
 	page('/reviews', reviews);
 	page('/team', team);
 	page('/contacts', contacts);
@@ -16,23 +17,27 @@ window.addEventListener('load', e=> {
 	
 	function index() {
 		let tPage = Handlebars.compile($('#t-index').html());
-		content.html(tPage());
+		pageContent.html(tPage());
 	}
 	function start() {
 		let tPage = Handlebars.compile($('#t-start').html());
-		content.html(tPage());
+		pageContent.html(tPage());
+	}
+	function content() {
+		let tPage = Handlebars.compile($('#t-content').html());
+		pageContent.html(tPage());
 	}
 	function reviews() {
 		let tPage = Handlebars.compile($('#t-reviews').html());
-		content.html(tPage());
+		pageContent.html(tPage());
 	}
 	function team() {
 		let tPage = Handlebars.compile($('#t-team').html());
-		content.html(tPage());
+		pageContent.html(tPage());
 	}
 	function contacts() {
 		let tPage = Handlebars.compile($('#t-contacts').html());
-		content.html(tPage());
+		pageContent.html(tPage());
 	}
 	/* --- */
 	
