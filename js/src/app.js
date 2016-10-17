@@ -1,7 +1,8 @@
-/* global page, Handlebars */
+/* global page, Handlebars, getContent */
 window.addEventListener('load', e=> {
 	let pageContent = $('#js-content');
 	
+	let preloader = $('#t-preloader').html();
 	
 	/* Навигация */
 	page('/', index);
@@ -16,28 +17,34 @@ window.addEventListener('load', e=> {
 	});
 	
 	function index() {
-		let tPage = Handlebars.compile($('#t-index').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-index').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-index'));
 	}
 	function start() {
-		let tPage = Handlebars.compile($('#t-start').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-start').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-start'));
 	}
 	function content() {
-		let tPage = Handlebars.compile($('#t-content').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-content').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-content'));
 	}
 	function reviews() {
-		let tPage = Handlebars.compile($('#t-reviews').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-reviews').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-reviews'));
 	}
 	function team() {
-		let tPage = Handlebars.compile($('#t-team').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-team').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-team'));
 	}
 	function contacts() {
-		let tPage = Handlebars.compile($('#t-contacts').html());
-		pageContent.html(tPage());
+		// let tPage = Handlebars.compile($('#t-contacts').html());
+		// pageContent.html(tPage());
+		getContent(preloader, pageContent, $('#t-contacts'));
 	}
 	/* --- */
 	
