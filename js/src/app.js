@@ -2,8 +2,6 @@
 window.addEventListener('load', e=> {
 	let pageContent = $('#js-content');
 	
-	let preloader = $('#t-preloader').html();
-	
 	/* Навигация */
 	page('/', index);
 	page('/start', start);
@@ -15,36 +13,23 @@ window.addEventListener('load', e=> {
 	page({
 		hashbang: true
 	});
-	
 	function index() {
-		// let tPage = Handlebars.compile($('#t-index').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-index'));
+		getContent(pageContent, $('#t-index'));
 	}
 	function start() {
-		// let tPage = Handlebars.compile($('#t-start').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-start'));
+		getContent(pageContent, $('#t-start'));
 	}
 	function content() {
-		// let tPage = Handlebars.compile($('#t-content').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-content'));
+		getContent(pageContent, $('#t-content'));
 	}
 	function reviews() {
-		// let tPage = Handlebars.compile($('#t-reviews').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-reviews'));
+		getContent(pageContent, $('#t-reviews'));
 	}
 	function team() {
-		// let tPage = Handlebars.compile($('#t-team').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-team'));
+		getContent(pageContent, $('#t-team'));
 	}
 	function contacts() {
-		// let tPage = Handlebars.compile($('#t-contacts').html());
-		// pageContent.html(tPage());
-		getContent(preloader, pageContent, $('#t-contacts'));
+		getContent(pageContent, $('#t-contacts'));
 	}
 	/* --- */
 	
@@ -52,16 +37,19 @@ window.addEventListener('load', e=> {
 	let descMenu = $('#js-desc-menu'),
 		mobMenu = $('#js-mob-menu'),
 		btnMobMenu = $('#js-btn-mob-menu');
-	mobMenu.html(descMenu.html());
+	mobMenu.html(descMenu.html()).find('li a').addClass('js-mob-menu-item');
 	btnMobMenu.sideNav();
 	/* --- */
 	
-	/* Обрабатываем клики */
+	/* Обрабатываем клики для всего сайта */
 	$(window).click(e=> {
 		let $el = $(e.target);
 		// Видео на главной
 		if ($el.hasClass('js-index-video')) {
 			$el.html('<iframe class="c-iframe-video" src="https://player.vimeo.com/video/182517337?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+		}
+		if ($el.hasClass('js-mob-menu-item')) {
+			btnMobMenu.sideNav('hide');
 		}
 	});
 	/* --- */
