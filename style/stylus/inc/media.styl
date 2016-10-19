@@ -36,6 +36,9 @@
 	.c-lesson-card
 		&__content
 			width 50%
+		&__content-header
+			font-size 18px
+			margin-top 10px
 		&__icon
 			width 50%
 			padding-top 50px
@@ -47,6 +50,14 @@
 		font-size 1.5rem
 	.c-start-form
 		margin-top 0
+
+@media only screen and (max-width: 700px)
+	.c-lesson-card
+		&__content
+			width 100%
+			float none
+		&__icon
+			display none
 
 @media only screen and (max-width: 600px)
 	h1
@@ -68,14 +79,7 @@
 			&__content-item
 				padding-left 10px
 	.c-lesson-card
-		&__content
-			width 100%
-			float none
-		&__icon
-			display none
 		&__content-header
-			font-size 18px
-			margin-top 10px
 			margin-bottom 0
 		&__content-header-bottom
 			font-size 15px
