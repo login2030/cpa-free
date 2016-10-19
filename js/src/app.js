@@ -21,6 +21,7 @@ window.addEventListener('load', e=> {
 	}
 	function content() {
 		getContent(pageContent, $('#t-content'));
+		$('#js-tabs').tabs();
 	}
 	function reviews() {
 		getContent(pageContent, $('#t-reviews'));

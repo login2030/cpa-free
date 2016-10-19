@@ -27,7 +27,7 @@
 				<li><a href="/team">Наша команда</a></li>
 				<li><a href="/contacts">Контакты</a></li>
 			</ul>
-			<ul class="side-nav" id="js-mob-menu"></ul>
+			<ul id="js-mob-menu" class="c-mob-menu side-nav"></ul>
 		</div>
 	</nav>
 	
@@ -82,7 +82,51 @@
 	<script id="t-content" type="text/x-handlebars-template">
 		<section class="l-page-content">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Содержание курса</h1>
+				<h1>{{content.h1}}</h1>
+				<div class="c-tab">
+					<div class="row">
+						<div class="c-tab__header-wrapper col l12 m12 s12">
+							<ul id="js-tabs" class="c-tab__header tabs">
+								<li class="c-tab__header-item tab col l1 m1 s1"><a class="active" href="#learn-1">Урок 1</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-2">Урок 2</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-3">Урок 3</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-4">Урок 4</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-5">Урок 5</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-6">Урок 6</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-7">Урок 7</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-8">Урок 8</a></li>
+								<li class="c-tab__header-item tab col s1"><a href="#learn-9">Урок 9</a></li>
+							</ul>
+						</div>
+						{{#each content.lesson}}
+						<div id="learn-{{this.id}}" class="c-tab__content col s12">
+							<div class="c-tab__content-item">
+								<div class="c-lesson-card">
+									<div class="c-lesson-card__icon">
+										<a class="c-lesson-card__link" href="/start">
+											<img class="c-lesson-card__img" src="images/{{this.img}}" alt="">
+										</a>
+									</div>
+									<div class="c-lesson-card__content">
+										<p class="c-lesson-card__content-header">{{this.header}}</p>
+										<ol class="c-lesson-card__content-list">
+											{{#each this.headerContent}}
+											<li>{{this}}</li>
+											{{/each}}
+										</ol>
+										<p class="c-lesson-card__content-header-bottom">Содержание</p>
+										<ol class="c-lesson-card__content-list">
+											{{#each this.content}}
+											<li>{{this}}</li>
+											{{/each}}
+										</ol>
+									</div>
+								</div>
+							</div>
+						</div>
+						{{/each}}
+					</div>
+				</div>
 			</div>
 		</section>
 	</script>
