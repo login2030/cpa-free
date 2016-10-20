@@ -9,7 +9,7 @@
 	<script type="text/javascript">
 		var app = {};
 	</script>
-	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
 	<link rel="stylesheet" href="style/css/site.css">
 	
@@ -18,7 +18,7 @@
 <body>
 	<nav class="teal darken-1">
 		<div class="nav-wrapper container">
-			<a href="#" id="js-btn-mob-menu" data-activates="js-mob-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+			<a href="#" id="js-btn-mob-menu" data-activates="js-mob-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
 			<ul id="js-desc-menu" class="left hide-on-med-and-down">
 				<li><a href="/">Домой</a></li>
 				<li><a href="/start">Начать</a></li>
@@ -102,11 +102,6 @@
 						<div id="learn-{{this.id}}" class="c-tab__content col s12">
 							<div class="c-tab__content-item">
 								<div class="c-lesson-card">
-									<div class="c-lesson-card__icon">
-										<a class="c-lesson-card__link" href="/start">
-											<img class="c-lesson-card__img" src="images/{{this.img}}" alt="">
-										</a>
-									</div>
 									<div class="c-lesson-card__content">
 										<p class="c-lesson-card__content-header">{{this.header}}</p>
 										<ol class="c-lesson-card__content-list">
@@ -120,6 +115,11 @@
 											<li>{{this}}</li>
 											{{/each}}
 										</ol>
+									</div>
+									<div class="c-lesson-card__icon">
+										<a class="c-lesson-card__link" href="/start">
+											<img class="c-lesson-card__img" src="images/{{this.img}}" alt="">
+										</a>
 									</div>
 								</div>
 							</div>
@@ -175,12 +175,7 @@
 	</footer>
 	
 	<script src="data.json" type="text/javascript"></script>
-	
-	<script src="js/plugins/modernizr.min.js" type="text/javascript"></script>
-	<script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
-	<script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js" type="text/javascript"></script>
-	<script src="https://cdn.jsdelivr.net/page.js/1.6.3/page.min.js" type="text/javascript"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+	<script src="js/libs/libs.js" type="text/javascript"></script>
 	<script src="js/app.min.js" type="text/javascript"></script>
 </body>
 </html>
