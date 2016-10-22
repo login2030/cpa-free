@@ -1,14 +1,14 @@
 /* global page, Handlebars, getContent, Materialize */
 window.addEventListener('load', e=> {
-	let pageContent = $('#js-content');
-	
+	let pageContent = $('#js-content'),
+		htmlBody = $('html, body'),
+		footer = $('#js-footer');
 	/* Навигация */
 	page('/', index);
 	page('/start', start);
 	page('/content', content);
 	page('/reviews', reviews);
 	page('/team', team);
-	page('/contacts', contacts);
 	
 	page({
 		hashbang: true
@@ -28,9 +28,6 @@ window.addEventListener('load', e=> {
 	}
 	function team() {
 		getContent(pageContent, $('#t-team'));
-	}
-	function contacts() {
-		getContent(pageContent, $('#t-contacts'));
 	}
 	/* --- */
 	
@@ -53,6 +50,18 @@ window.addEventListener('load', e=> {
 		}
 		if ($el.hasClass('js-mob-menu-item')) {
 			btnMobMenu.sideNav('hide');
+		}
+		if ($el.hasClass('js-footer')) {
+			e.preventDefault();
+			htmlBody.animate({
+				scrollTop: footer.offset().top
+			}, 100, ()=> {
+				let btn = footer.find('.waves-effect.waves-light.btn');
+				btn.addClass('red');
+				setTimeout(()=> {
+					btn.removeClass('red');
+				}, 3000);
+			});
 		}
 	});
 	/* --- */

@@ -25,7 +25,7 @@
 				<li><a href="/content">Содержание курса</a></li>
 				<li><a href="/reviews">Отзывы учеников</a></li>
 				<li><a href="/team">Наша команда</a></li>
-				<li><a href="/contacts">Контакты</a></li>
+				<li><a href="javascript:void(0)" class="js-footer">Контакты</a></li>
 			</ul>
 			<ul id="js-mob-menu" class="c-mob-menu side-nav"></ul>
 		</div>
@@ -166,15 +166,8 @@
 			</div>
 		</section>
 	</script>
-	<script id="t-contacts" type="text/x-handlebars-template">
-		<section class="l-page-contacts">
-			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>{{contacts.h1}}</h1>
-			</div>
-		</section>
-	</script>
 	
-	<footer class="l-footer page-footer teal darken-1">
+	<footer id="js-footer" class="l-footer page-footer teal darken-1">
 		<div class="container">
 			<div class="row">
 				<div class="col l6 s12 l-footer__item white-text">
@@ -304,7 +297,7 @@
 			</ul>
 		</div>
 		<div class="modal-footer">
-			<a href="#!" class=" modal-action modal-close waves-effect waves-green btn">Я принимаю</a>
+			<button class=" modal-action modal-close waves-effect waves-green btn">Я принимаю</button>
 		</div>
 	</div>
 	
