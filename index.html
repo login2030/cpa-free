@@ -36,11 +36,23 @@
 	<script id="t-index" type="text/x-handlebars-template">
 		<section class="l-page-index">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Ищете заработок в инттернете?</h1>
-				<h2>узнай за одну минуту с чего начать</h2>
+				<h1>{{index.h1}}</h1>
+				<h2>{{index.h2}}</h2>
 			</div>
 			<div class="c-video js-index-video"></div>
 			<a href="/start" class="c-button-material waves-effect btn-large amber darken-4 btn"><i class="tiny material-icons right">thumb_up</i>Начать</a>
+			<div class="l-scroll-fire row">
+				<div class="l-scroll-fire__header blue-grey-text text-darken-3  col l8 m8 s12 offset-l2 offset-m2">
+					<h2>Что Вы узнаете из курса:</h2>
+				</div>
+				<div class="row">
+					<ul class="c-scroll-fire col l8 m8 s12 offset-l2 offset-m2 light-blue-text text-darken-4">
+						{{#each index.knowledge}}
+						<li class="c-scroll-fire__item"><i class="c-scroll-fire__ico small material-icons red-text">stars</i>{{this}}</li>
+						{{/each}}
+					</ul>
+				</div>
+			</div>
 		</section>
 	</script>
 	
@@ -87,15 +99,9 @@
 					<div class="row">
 						<div class="c-tab__header-wrapper col l12 m12 s12">
 							<ul id="js-tabs" class="c-tab__header tabs">
-								<li class="c-tab__header-item tab col l1 m1 s1"><a class="active" href="#learn-1">Урок 1</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-2">Урок 2</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-3">Урок 3</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-4">Урок 4</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-5">Урок 5</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-6">Урок 6</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-7">Урок 7</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-8">Урок 8</a></li>
-								<li class="c-tab__header-item tab col s1"><a href="#learn-9">Урок 9</a></li>
+								{{#each content.lesson}}
+								<li class="c-tab__header-item tab col l1 m1 s1"><a class="{{actionTab id}}" href="#learn-{{id}}">Урок {{id}}</a></li>
+								{{/each}}
 							</ul>
 						</div>
 						{{#each content.lesson}}
@@ -175,7 +181,11 @@
 	</footer>
 	
 	<script src="data.json" type="text/javascript"></script>
-	<script src="js/libs/libs.js" type="text/javascript"></script>
+	<!-- <script src="js/libs/libs.js" type="text/javascript"></script> -->
+	<script src="https://cdn.jsdelivr.net/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/handlebarsjs/4.0.5/handlebars.min.js" type="text/javascript"></script>
+	<script src="https://cdn.jsdelivr.net/page.js/1.6.3/page.min.js" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 	<script src="js/app.min.js" type="text/javascript"></script>
 </body>
 </html>

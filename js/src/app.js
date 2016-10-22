@@ -1,4 +1,4 @@
-/* global page, Handlebars, getContent */
+/* global page, Handlebars, getContent, Materialize */
 window.addEventListener('load', e=> {
 	let pageContent = $('#js-content');
 	
@@ -15,6 +15,13 @@ window.addEventListener('load', e=> {
 	});
 	function index() {
 		getContent(pageContent, $('#t-index'));
+		// Materialize.scrollFire([{
+		// 	selector: '.c-scroll-fire',
+		// 	offset: 0,
+		// 	callback: function(el) {
+		// 		Materialize.showStaggeredList($(el));
+		// 	}
+		// }]);
 	}
 	function start() {
 		getContent(pageContent, $('#t-start'));

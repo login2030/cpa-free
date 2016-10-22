@@ -9,3 +9,9 @@
 function getContent(page, tpl) {
 	page.html(Handlebars.compile(tpl.html())(app.data));
 }
+
+Handlebars.registerHelper('actionTab', function(id) {
+    if (id === 1) {
+        return 'active';
+    } 
+});
