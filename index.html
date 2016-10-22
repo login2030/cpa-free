@@ -59,7 +59,7 @@
 	<script id="t-start" type="text/x-handlebars-template">
 		<section class="l-page-start">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Начните обучение прямо сейчас</h1>
+				<h1>{{start.h1}}</h1>
 			</div>
 			<div class="row">
 				<form class="c-start-form col l6 offset-l3 m10 offset-m1 s12" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" target="_blank">
@@ -139,21 +139,23 @@
 	<script id="t-reviews" type="text/x-handlebars-template">
 		<section class="l-page-reviews">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Отзывы</h1>
+				<h1>{{reviews.h1}}</h1>
+				<div class="c-video c-video--reviews js-reviews-video"></div>
+				<a href="/start" class="c-button-material waves-effect btn-large amber darken-4 btn"><i class="tiny material-icons right">thumb_up</i>Начать</a>
 			</div>
 		</section>
 	</script>
 	<script id="t-team" type="text/x-handlebars-template">
 		<section class="l-page-team">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Команда</h1>
+				<h1>{{team.h1}}</h1>
 			</div>
 		</section>
 	</script>
 	<script id="t-contacts" type="text/x-handlebars-template">
 		<section class="l-page-contacts">
 			<div class="c-index-header blue-grey-text text-darken-3">
-				<h1>Контакты</h1>
+				<h1>{{contacts.h1}}</h1>
 			</div>
 		</section>
 	</script>

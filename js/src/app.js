@@ -15,13 +15,6 @@ window.addEventListener('load', e=> {
 	});
 	function index() {
 		getContent(pageContent, $('#t-index'));
-		// Materialize.scrollFire([{
-		// 	selector: '.c-scroll-fire',
-		// 	offset: 0,
-		// 	callback: function(el) {
-		// 		Materialize.showStaggeredList($(el));
-		// 	}
-		// }]);
 	}
 	function start() {
 		getContent(pageContent, $('#t-start'));
@@ -52,9 +45,11 @@ window.addEventListener('load', e=> {
 	/* Обрабатываем клики для всего сайта */
 	$(window).click(e=> {
 		let $el = $(e.target);
-		// Видео на главной
 		if ($el.hasClass('js-index-video')) {
 			$el.html('<iframe class="c-iframe-video" src="https://player.vimeo.com/video/182517337?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
+		}
+		if ($el.hasClass('js-reviews-video')) {
+			$el.html('<iframe class="c-iframe-video" src="https://player.vimeo.com/video/182519880?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
 		}
 		if ($el.hasClass('js-mob-menu-item')) {
 			btnMobMenu.sideNav('hide');
