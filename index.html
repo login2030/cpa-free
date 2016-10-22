@@ -150,6 +150,20 @@
 			<div class="c-index-header blue-grey-text text-darken-3">
 				<h1>{{team.h1}}</h1>
 			</div>
+			<div class="c-team-list">
+				{{#each team.members}}
+				<div class="c-team-list__item-wr">
+					<div class="c-team-list__item-img">
+						<img src="images/{{this.id}}.jpg" class="c-team-list__img">
+						<a href="{{this.vk}}" class="c-team-list__soc red btn-floating waves-effect waves-light"><i class="c-team-list__soc-ico material-icons small">chat_bubble</i></a>
+					</div>
+					<div class="c-team-list__item-info">
+						<p class="c-team-list__name">{{this.name}}</p>
+						<p class="c-team-list__staf">{{this.staf}}</p>
+					</div>
+				</div>
+				{{/each}}
+			</div>
 		</section>
 	</script>
 	<script id="t-contacts" type="text/x-handlebars-template">
