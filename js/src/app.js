@@ -55,12 +55,14 @@ window.addEventListener('load', e=> {
 			e.preventDefault();
 			htmlBody.animate({
 				scrollTop: footer.offset().top
-			}, 100, ()=> {
+			}, 200, ()=> {
 				let btn = footer.find('.waves-effect.waves-light.btn');
-				btn.addClass('red');
 				setTimeout(()=> {
-					btn.removeClass('red');
-				}, 3000);
+					btn.addClass('red');
+					setTimeout(()=> {
+						btn.removeClass('red');
+					}, 3000);
+				}, 500);
 			});
 		}
 	});
