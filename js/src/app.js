@@ -56,4 +56,8 @@ window.addEventListener('load', e=> {
 		}
 	});
 	/* --- */
+	
+	/* Политика конфиденциальности */
+	$('#modal-trigger').leanModal();
+	/* --- */
 });
