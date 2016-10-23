@@ -1,7 +1,8 @@
-/* global page, Handlebars, getContent, Materialize */
+/* global page, Handlebars, getContent, Materialize, sendStartForm */
 window.addEventListener('load', e=> {
 	let pageContent = $('#js-content'),
 		htmlBody = $('html, body'),
+		body = $('body'),
 		footer = $('#js-footer');
 	/* Навигация */
 	page('/', index);
@@ -18,6 +19,7 @@ window.addEventListener('load', e=> {
 	}
 	function start() {
 		getContent(pageContent, $('#t-start'));
+		sendStartForm();
 	}
 	function content() {
 		getContent(pageContent, $('#t-content'));
@@ -71,4 +73,5 @@ window.addEventListener('load', e=> {
 	/* Политика конфиденциальности */
 	$('#modal-trigger').leanModal();
 	/* --- */
+	
 });

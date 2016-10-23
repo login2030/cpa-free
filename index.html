@@ -19,7 +19,7 @@
 	<nav class="teal darken-1">
 		<div class="nav-wrapper container">
 			<a href="#" id="js-btn-mob-menu" data-activates="js-mob-menu" class="button-collapse right"><i class="material-icons">menu</i></a>
-			<ul id="js-desc-menu" class="left hide-on-med-and-down">
+			<ul id="js-desc-menu" class="c-desc-menu hide-on-med-and-down">
 				<li><a href="/">Домой</a></li>
 				<li><a href="/start">Начать</a></li>
 				<li><a href="/content">Содержание курса</a></li>
@@ -62,18 +62,18 @@
 				<h1>{{start.h1}}</h1>
 			</div>
 			<div class="row">
-				<form class="c-start-form col l6 offset-l3 m10 offset-m1 s12" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" target="_blank">
+				<form id="js-start-form" class="c-start-form col l6 offset-l3 m10 offset-m1 s12" action="https://app.getresponse.com/add_subscriber.html" accept-charset="utf-8" method="post" target="_blank">
 					<div class="row">
 						<div class="input-field col l12 m12 s12">
 							<i class="material-icons prefix">account_circle</i>
-							<input id="first-name" type="text" class="validate" required="required">
+							<input name="name" id="first-name" type="text">
 							<label for="first-name">Ваше имя</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col l12 m12 s12">
 							<i class="material-icons prefix">email</i>
-							<input id="email-field" type="email" class="validate" required="required">
+							<input name="email" id="email-field" type="email" class="validate">
 							<label for="email-field">Ваш Email</label>
 						</div>
 					</div>
@@ -189,13 +189,13 @@
 		</div>
 		<div class="footer-copyright footer-copyright-bottom">
 			<div class="container center-align white-text">
-				<a target="_blank" href="https://support-cpa.omnidesk.ru" class="white-text">Служба поддержки</a> <span>|</span> <a id="modal-trigger" class="white-text" href="#privacy-policy">Политика конфиденциальности</a> <span>|</span> <a class="white-text" href="#">Партнерская программа</a>
+				<a target="_blank" href="https://support-cpa.omnidesk.ru" class="white-text">Служба поддержки</a> <span>|</span> <a id="modal-trigger" class="white-text" href="#privacy-policy">Политика конфиденциальности</a> <span>|</span> <a class="white-text" target="_blank" href="http://cpapay.ru/ob/go/1/a">Партнерская программа</a>
 			</div>
 		</div>
 	</footer>
 
 	<!-- Modal Structure -->
-	<div id="privacy-policy" class="modal">
+	<div id="privacy-policy" class="c-privacy-policy modal">
 		<div class="modal-content">
 			<h4>Политика конфиденциальности</h4>
 			<p>Настоящая Политика конфиденциальности регулирует порядок обработки и использования персональных и иных данных владельцем сайта http://cpainside.com , Золотаревым Андреем Леонидовичем  (далее — Оператор).</p>
