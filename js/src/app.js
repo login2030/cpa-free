@@ -1,4 +1,4 @@
-/* global page, Handlebars, getContent, Materialize, sendStartForm, ouibounce */
+/* global page, Handlebars, getContent, Materialize, sendStartForm, ouibounce, sendAjax */
 window.addEventListener('load', e => {
 	let pageContent = $('#js-content'),
 		htmlBody = $('html, body'),
@@ -21,8 +21,10 @@ window.addEventListener('load', e => {
 
 	function start() {
 		getContent(pageContent, $('#t-start'));
-		sendStartForm($('#js-start-form'), $('#iframe-order-bro-click'), ()=> {
+		sendStartForm($('#js-start-form'), $('#iframe-order-bro-click'), (form)=> {
 			$('#popup-send-form').openModal();
+			out.disable();
+			sendAjax(form);
 		});
 	}
 
@@ -82,16 +84,17 @@ window.addEventListener('load', e => {
 	/* --- */
 
 	/* Попап при выходе с сайта */
-	ouibounce(document.getElementById('popup-outbounce'), {
+	let out = ouibounce(document.getElementById('popup-outbounce'), {
 		delay: 0,
 		aggressive: true,
 		callback: function() {
 			$('#popup-outbounce').openModal();
 		}
 	});
-	sendStartForm($('#js-start-form-popup'), $('#iframe-order-bro-click'), ()=> {
+	sendStartForm($('#js-start-form-popup'), $('#iframe-order-bro-click'), (form)=> {
 		$('#popup-send-form').openModal();
 		$('#popup-outbounce').closeModal();
+		sendAjax(form);
 	});
 	/* --- */
 
