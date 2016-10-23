@@ -21,6 +21,8 @@ function sendStartForm() {
 				return false;
 			} else {
 				e.target.submit();
+				$input.val('');
+				$('#popup-send-form').openModal();
 			}
 		}
 	});
