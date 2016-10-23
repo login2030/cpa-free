@@ -1,5 +1,5 @@
-/* global page, Handlebars, getContent, Materialize, sendStartForm */
-window.addEventListener('load', e=> {
+/* global page, Handlebars, getContent, Materialize, sendStartForm, ouibounce */
+window.addEventListener('load', e => {
 	let pageContent = $('#js-content'),
 		htmlBody = $('html, body'),
 		body = $('body'),
@@ -10,29 +10,36 @@ window.addEventListener('load', e=> {
 	page('/content', content);
 	page('/reviews', reviews);
 	page('/team', team);
-	
+
 	page({
 		hashbang: true
 	});
+
 	function index() {
 		getContent(pageContent, $('#t-index'));
 	}
+
 	function start() {
 		getContent(pageContent, $('#t-start'));
-		sendStartForm();
+		sendStartForm($('#js-start-form'), $('#iframe-order-bro-click'), ()=> {
+			$('#popup-send-form').openModal();
+		});
 	}
+
 	function content() {
 		getContent(pageContent, $('#t-content'));
 		$('#js-tabs').tabs();
 	}
+
 	function reviews() {
 		getContent(pageContent, $('#t-reviews'));
 	}
+
 	function team() {
 		getContent(pageContent, $('#t-team'));
 	}
 	/* --- */
-	
+
 	/* Меню */
 	let descMenu = $('#js-desc-menu'),
 		mobMenu = $('#js-mob-menu'),
@@ -40,9 +47,9 @@ window.addEventListener('load', e=> {
 	mobMenu.html(descMenu.html()).find('li a').addClass('js-mob-menu-item');
 	btnMobMenu.sideNav();
 	/* --- */
-	
+
 	/* Обрабатываем клики для всего сайта */
-	$(window).click(e=> {
+	$(window).click(e => {
 		let $el = $(e.target);
 		if ($el.hasClass('js-index-video')) {
 			$el.html('<iframe class="c-iframe-video" src="https://player.vimeo.com/video/182517337?autoplay=1" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');
@@ -57,11 +64,11 @@ window.addEventListener('load', e=> {
 			e.preventDefault();
 			htmlBody.animate({
 				scrollTop: footer.offset().top
-			}, 200, ()=> {
+			}, 200, () => {
 				let btn = footer.find('.waves-effect.waves-light.btn');
-				setTimeout(()=> {
+				setTimeout(() => {
 					btn.addClass('red');
-					setTimeout(()=> {
+					setTimeout(() => {
 						btn.removeClass('red');
 					}, 3000);
 				}, 500);
@@ -69,9 +76,23 @@ window.addEventListener('load', e=> {
 		}
 	});
 	/* --- */
-	
+
 	/* Политика конфиденциальности */
 	$('#modal-trigger').leanModal();
 	/* --- */
-	
+
+	/* Попап при выходе с сайта */
+	ouibounce(document.getElementById('popup-outbounce'), {
+		delay: 0,
+		aggressive: true,
+		callback: function() {
+			$('#popup-outbounce').openModal();
+		}
+	});
+	sendStartForm($('#js-start-form-popup'), $('#iframe-order-bro-click'), ()=> {
+		$('#popup-send-form').openModal();
+		$('#popup-outbounce').closeModal();
+	});
+	/* --- */
+
 });

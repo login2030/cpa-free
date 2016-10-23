@@ -10,8 +10,8 @@ function getContent(page, tpl) {
 	page.html(Handlebars.compile(tpl.html())(app.data));
 }
 
-function sendStartForm() {
-	$('#js-start-form').submit(e=> {
+function sendStartForm(form, iframe, func) {
+	form.submit(e=> {
 		let $form = $(e.target),
 			$input = $form.find('.validate');
 		for (let i = $input.length - 1; i >= 0; i--) {
@@ -21,8 +21,11 @@ function sendStartForm() {
 				return false;
 			} else {
 				e.target.submit();
-				$input.val('');
-				$('#popup-send-form').openModal();
+				$input.val('').blur();
+				if (iframe.find('iframe').length === 0) {
+					iframe.html('<iframe src="http://cpapay.ru/ob/go/1/ifr/realtime" frameborder="0"></iframe>');
+				}
+				func();
 			}
 		}
 	});
