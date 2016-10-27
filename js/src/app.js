@@ -11,9 +11,7 @@ window.addEventListener('load', e => {
 	page('/reviews', reviews);
 	page('/team', team);
 
-	page({
-		hashbang: true
-	});
+	page();
 
 	function index() {
 		getContent(pageContent, $('#t-index'));
