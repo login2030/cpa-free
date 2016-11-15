@@ -15,9 +15,6 @@ function sendStartForm(form, iframe, func) {
 				return false;
 			} else {
 				e.target.submit();
-				if (iframe.find('iframe').length === 0) {
-					iframe.html('<iframe src="http://cpapay.ru/ob/go/1/ifr/realtime" frameborder="0"></iframe>');
-				}
 			}
 		}
 		func($form);

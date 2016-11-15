@@ -1,4 +1,4 @@
-/* global page, Handlebars, getContent, Materialize, sendStartForm, ouibounce, sendAjax */
+/* global app, page, Handlebars, getContent, Materialize, sendStartForm, ouibounce, sendAjax */
 window.addEventListener('load', e => {
 	let pageContent = $('#js-content'),
 		htmlBody = $('html, body'),
@@ -44,6 +44,9 @@ window.addEventListener('load', e => {
 	let descMenu = $('#js-desc-menu'),
 		mobMenu = $('#js-mob-menu'),
 		btnMobMenu = $('#js-btn-mob-menu');
+		// descMenu.css({
+		// 	width: descMenu.width()
+		// });
 	mobMenu.html(descMenu.html()).find('li a').addClass('js-mob-menu-item');
 	btnMobMenu.sideNav();
 	/* --- */
@@ -60,27 +63,18 @@ window.addEventListener('load', e => {
 		if ($el.hasClass('js-mob-menu-item')) {
 			btnMobMenu.sideNav('hide');
 		}
-		if ($el.hasClass('js-footer')) {
-			e.preventDefault();
-			htmlBody.animate({
-				scrollTop: footer.offset().top
-			}, 200, () => {
-				let btn = footer.find('.waves-effect.waves-light.btn');
-				setTimeout(() => {
-					btn.addClass('red');
-					setTimeout(() => {
-						btn.removeClass('red');
-					}, 3000);
-				}, 500);
-			});
-		}
 	});
 	/* --- */
 
 	/* Политика конфиденциальности */
 	$('#modal-trigger').leanModal();
 	/* --- */
-
+	
+	/* Ставим реф ссылку на страницу благодарности */
+	$('#popup-outbounce')
+		.find('#js-start-form-popup input[name="thankyou_url"]').attr('value', app.data.setting.thankyou);
+	/* --- */
+	
 	/* Попап при выходе с сайта */
 	let out = ouibounce(document.getElementById('popup-outbounce'), {
 		delay: 0,

@@ -1,4 +1,7 @@
 app.data = {
+	"setting": {
+		"thankyou": "http://cpapay.ru/ob/go/1/pgst/realtime"
+	},
 	"index": {
 		"h1": "Ищете заработок в интернете?",
 		"h2": "Узнай за одну минуту с чего начать",
